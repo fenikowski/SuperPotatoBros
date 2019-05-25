@@ -63,7 +63,7 @@ class Player extends Element {
       case "portal":
         let path = window.location.pathname;
         let number = parseInt(path[path.length - 6]) + 1;
-        window.location.pathname = `${path}/stage${number}.html`;
+        window.location.pathname = `${settings.path}/stage${number}.html`;
         sessionStorage.setItem(
           `eatenCookiesStage${number}`,
           stats.cookiesEaten

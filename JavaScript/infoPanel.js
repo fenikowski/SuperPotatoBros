@@ -2,7 +2,7 @@ const infoPanel = document.querySelector("div.infoPanel");
 
 const startBtn = document.querySelector("div.infoPanel button.startBtn");
 
-if (window.location.pathname == `${path}/stage1.html`) {
+if (window.location.pathname == `${settings.path}/stage1.html`) {
   window.addEventListener("load", function() {
     setTimeout(function() {
       document.querySelector("div.infoPanel img.loading").style.display =
@@ -77,7 +77,7 @@ function deathPanel() {
   document
     .querySelector("button.againBtn")
     .addEventListener("click", function() {
-      window.location.pathname = `${path}/stage1.html`;
+      window.location.pathname = `${settings.path}/stage1.html`;
       sessionStorage.setItem(`eatenCookiesStage1`, 0);
       sessionStorage.setItem(`hpStage1`, 100);
     });
