@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
+
+/* font-family: 'Permanent Marker', cursive; */
+
+:root {
+  --mainFont: Permanent Marker;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  overflow: hidden;
+}
+
+div.gameMap {
+  height: 800px;
+  width: 1500px;
+  border: black 3px solid;
+  position: relative;
+  background-color: rgb(156, 225, 245);
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+div.player {
+  position: relative;
+  background-image: url(../img/potatoStanding.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* border: dashed black 1px; */
+}
+
+.mapElement {
+  background-color: #333;
+  background-size: auto 100%;
+  position: absolute;
+}
+
+div.fire {
+  position: absolute;
+  background-image: url(../img/fire.gif);
+  background-size: cover;
+}
+
+div.healthBar {
+  width: 50%;
+  height: 10%;
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+  /* background-color: lightcoral; */
+  border: black 1px solid;
+  opacity: 0.5;
+}
+
+div.healthBar span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-color: lightcoral;
+}

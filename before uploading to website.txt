@@ -1,0 +1,1 @@
+// values in infoPanel and player.js and deathPanel function of window.location have to be changed

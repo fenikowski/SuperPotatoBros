@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700");
+
+body:after {
+  content: url(../img/cloud.png) url(../img/cookie.png) url(../img/grass.jpg)
+    url(../img/palm.png) url(../img/palm2.png) url(../img/palm3.png)
+    url(../img/potatoStanding.gif) url(../img/potatoStandingLeft.gif)
+    url(../img/potatoWalking.gif) url(../img/potatoWalkingLeft.gif)
+    url(../img/sword.png) url(../img/trampolineActive.gif)
+    url(../img/trampolineInactive.png) url(../img/potatoJumpingRight.png)
+    url(../img/potatoJumpingLeft.png) url(../img/portal.gif)
+    url(../img/snailElectric.gif) url(../img/bush.png) url(../img/portalRed.gif)
+    url(../img/snailDark.png) url(../img/stars2.gif) url(../img/mushroom.gif)
+    url(../img/mushroom2.gif) url(../img/snailDarkElectric.gif)
+    url(../img/grass2.jpg);
+  display: none;
+}
+
+div.infoPanel {
+  position: absolute;
+  height: 80%;
+  width: 80%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #222;
+  border-radius: 20px;
+  box-shadow: 0 0 0px 12px #555;
+  color: rgb(106, 106, 122);
+  text-shadow: 4px 4px 0 #000;
+  z-index: 2;
+  font-family: var(--mainFont);
+}
+
+div.infoPanel h1 {
+  margin-top: 5%;
+  font-size: 12vh;
+}
+
+div.infoPanel img.loading {
+  height: 30vh;
+  margin-top: 5%;
+}
+
+div.infoPanel button {
+  color: rgb(106, 106, 122);
+  text-shadow: 4px 4px 0 #000;
+}
+
+div.infoPanel button.startBtn {
+  display: none;
+  margin-top: 20%;
+  background-color: transparent;
+  border: none;
+  font-family: var(--mainFont);
+  font-size: 10vh;
+}
+
+div.infoPanel button:hover {
+  color: red;
+  cursor: pointer;
+}
+
+div.infoPanel button:active {
+  color: red;
+  cursor: pointer;
+  text-shadow: -4px -4px 0 #000;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+div.infoPanel button.startBtn i {
+  margin-right: 10px;
+}
+
+div.score {
+  position: absolute;
+  color: black;
+  font-size: 3vh;
+  font-family: var(--mainFont);
+  top: 1px;
+  left: 10px;
+  z-index: 1;
+}
+
+div.HUD {
+  position: absolute;
+  top: 1px;
+  right: 10px;
+  color: black;
+  font-size: 3vh;
+  font-family: var(--mainFont);
+  z-index: 1;
+}
+
+div.HUD div.hp div {
+  display: inline-block;
+  box-sizing: border-box;
+  border: black 3px solid;
+  width: 10vw;
+  height: 3vh;
+  transform: translate(2%, 13%);
+}
+div.HUD div.hp div span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: lightgreen;
+}
+
+div.HUD div.mp div {
+  display: inline-block;
+  box-sizing: border-box;
+  border: black 3px solid;
+  width: 10vw;
+  height: 3vh;
+  transform: translate(0%, 13%);
+}
+div.HUD div.mp div span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(148, 181, 243);
+}
+
+div.popup {
+  position: absolute;
+  z-index: 3;
+  height: 17%;
+  width: 20%;
+  right: 3%;
+  bottom: 13%;
+  border-radius: 5px;
+  background-color: #333;
+  opacity: 0;
+  transition: 1s;
+  font-family: Roboto;
+  box-shadow: 0 0 0px 6px #555;
+  color: #ddd;
+}
+
+div.popup h3 {
+  margin-top: 10px;
+}
+
+div.popup p {
+  margin: 5px 3px 0 3px;
+  font-weight: 300;
+  line-height: 22px;
+}
+
+div.popup p span {
+  display: inline-block;
+  text-align: center;
+  font-weight: 700;
+  border: #aaa 2px solid;
+  padding: 0 4px;
+  border-radius: 4px;
+  height: 26px;
+  width: 26px;
+}
+div.popup p span.space {
+  width: 90px;
+  animation: miganie 1s infinite;
+}
+
+@keyframes miganie {
+  0% {
+    opacity: 1;
+  }
+  33% {
+    opacity: 1;
+  }
+  66% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* DEATH PANEL HERE */
+div.infoPanel button.againBtn {
+  display: inline-block;
+  margin-top: 8%;
+  margin-right: 7%;
+  background-color: transparent;
+  border: none;
+  font-family: var(--mainFont);
+  font-size: 15vh;
+  transition: transform 1s;
+}
+
+div.infoPanel button.repeatBtn {
+  display: inline-block;
+  margin-top: 8%;
+  margin-right: 7%;
+  margin-left: 7%;
+  background-color: transparent;
+  border: none;
+  font-family: var(--mainFont);
+  font-size: 15vh;
+  transition: transform 1s;
+}
+
+div.infoPanel button.exitBtn {
+  display: inline-block;
+  margin-top: 8%;
+  margin-left: 7%;
+  background-color: transparent;
+  border: none;
+  font-family: var(--mainFont);
+  font-size: 20vh;
+}
+
+div.infoPanel button.exitBtn i {
+  transform: translate(0%, -15%);
+}
+
+div.infoPanel button p {
+  font-size: 3vh;
+  display: block;
+}
+
+div.infoPanel p.result {
+  font-size: 6vh;
+}
