@@ -1,3 +1,9 @@
+// Enemy class exteds main Element class
+// uses x, y, width, height, map for enemy shaping and placement as in Element class (passed to 'super')
+// so far used only to create Snail enemy, thus parameters img and activeImg (animation), are set by default // to provide snails images
+// enemyNumber has to be passed when instance created for proper enemy recognition by player instance
+// starts from 0
+
 class Enemy extends Element {
   constructor(
     x = 0,
@@ -16,6 +22,9 @@ class Enemy extends Element {
     this.hp = 100;
   }
 
+  // method serves for creation of helthbar above enemy, although it's useless before stage four and
+  // enabling the superpower of player
+
   appendHealthBar() {
     const healthBar = document.createElement("div");
     healthBar.classList.add("healthBar");
@@ -23,6 +32,8 @@ class Enemy extends Element {
     const healthBarSpan = document.createElement("span");
     healthBar.appendChild(healthBarSpan);
   }
+
+  // method launched when conflicted with player, results in damaging player (by 20hp) and throwing player in the air by jump player's method
 
   activate(movementDirection) {
     player.damage(20);
@@ -68,6 +79,8 @@ class Enemy extends Element {
     }
   }
 
+  // defines position of the enemy and pushes it into map's elementsPoistions
+
   definingPosition() {
     this.position = [
       [this.y, this.x],
@@ -88,6 +101,8 @@ class Enemy extends Element {
     );
   }
 
+  // method damages the enemy and removes it using enemyNumber (index) if hp falls below 100 points
+
   damage(index) {
     if (this.hp > 0) {
       this.hp--;
@@ -104,6 +119,10 @@ class Enemy extends Element {
       setTimeout(this.element.remove, 2000);
     }
   }
+
+  // activates enemy's movement, not necessary when created
+  // this movement method checks for any declives of the ground and if finds one, turns the directions
+  // of enemy's movement
 
   movement(side = "left") {
     if (side == "right") {
@@ -194,6 +213,9 @@ class Enemy extends Element {
       15
     );
   }
+
+  // this movement method, doesn't take in consideration any declines of terrain, enemy will fall
+  // instead of turning if any occurs
 
   movementAlternative(side = "left") {
     if (side == "right") {

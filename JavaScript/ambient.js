@@ -1,4 +1,8 @@
-//CLOUDS AND OTHER DECO
+// clouds and other decorations of map - extensions of Element class
+// x, y, width, map are passed to 'super' for cloud's shaping and placement
+
+// Cloud creator
+// speed parameter indicates how quickly the cloud should move from right to the left
 
 class Cloud extends Element {
   constructor(x = 0, y = 0, width = 0, speed = 1, map) {
@@ -8,6 +12,8 @@ class Cloud extends Element {
     this.color = "";
     this.speed = speed;
   }
+
+  // movement method (uses speed from the constructor)
 
   doWhatCloudsDo() {
     setInterval(
@@ -24,7 +30,8 @@ class Cloud extends Element {
   }
 }
 
-//PALMTREE CREATOR
+//Palmtree creator
+
 class PalmTree extends Element {
   constructor(x = 0, y = 0, width = 0, map) {
     super(x, y, width, 0, map);
@@ -32,6 +39,9 @@ class PalmTree extends Element {
     this.height = Math.floor(this.map.globalHeight / 100) * (width / 360) * 430;
     this.y = Math.floor(this.map.globalHeight / 100) * y - 4;
   }
+
+  // method provides randomized animation of palmtree, choosing on of three images to start animation from
+  // later animates the tree
 
   doWhatPalmTreesDo() {
     const palmImg = [

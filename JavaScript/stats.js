@@ -6,6 +6,9 @@ class Stats {
     this.playerBeingDamaged = false;
   }
 
+  // inicializes stats in the begginig of every stage
+  // if there's information about the stats already in session storage, uses it
+
   inicialization() {
     let path = window.location.pathname;
     let number = parseInt(path[path.length - 6]) + 1;
@@ -32,9 +35,13 @@ class Stats {
     }%`;
   }
 
+  // actualizes the visual panel on the screen
+
   actualization() {
     document.querySelector("div.score span").textContent = this.cookiesEaten;
   }
+
+  // method serves player damaging, saves result, results in death
 
   damage(damage) {
     if (this.playerBeingDamaged === false) {
@@ -98,6 +105,8 @@ class Stats {
       this.mp
     }%`;
   }
+
+  // method removes player's mp when fire used
 
   fire() {
     if (this.mp > 0) {

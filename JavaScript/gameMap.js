@@ -1,14 +1,23 @@
+// Map creator
+// creates map, for the moment only one for a html document
+// in constructor uses parameter 'width' which is multiplicated by screen's height
+
 class GameMap {
   constructor(width) {
+    // perceptible map border
     this.mapBorder = 0;
+
+    // map's size and location
     this.globalHeight = Math.floor(window.innerHeight);
     this.globalWidth = this.globalHeight * width;
     this.location = document.querySelector("div.gameMap");
+
+    // containers for elements
     this.cookiesPositions = [];
     this.elementsPositions = [];
 
-    // first array defines left wall
-    // second array defines right wall
+    // first array defines left wall of the map
+    // second array defines right wall of the map
 
     this.terrainStructure = [
       [
@@ -26,16 +35,23 @@ class GameMap {
     ];
   }
 
-  createMap(imageURL) {
+  // method gives the container div size
+
+  createMap() {
     this.location.style.width = this.globalWidth + "px";
     this.location.style.height = this.globalHeight + "px";
     this.location.style.left = 0 + "px";
     this.location.style.top = 0 + "px";
   }
 
+  // method allows the map.world to be moved left/right depending on player's position
+
   mapMovement() {
+    // values for player position, if passed, the map moves
+    // can be changed
     let moveBorderRight = 650;
     let moveBorderLeft = 250;
+
     setInterval(
       function() {
         if (
@@ -62,8 +78,14 @@ class GameMap {
     );
   }
 
+  // Map elements creator
+  // method creates terrain on the map, pushes the position to the map instance
   // parameter is a number between 1 and 100
-  createMapElement(elementHeight, elementWidth, bottom, left, imageName) {
+  // elementHeight and elementWidth give the terrain element size, by default elementHeight should be 10
+  // parameters bottom and left places the element on the map
+  // imageName gives the element the look
+
+  createMapElement(elementHeight = 10, elementWidth, bottom, left, imageName) {
     const newElement = document.createElement("div");
     newElement.style.height =
       Math.floor(this.globalHeight / 100) * elementHeight + "px";

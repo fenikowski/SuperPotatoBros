@@ -1,8 +1,21 @@
+// file contains infoPanel funcionality + popup function and its scripted appearances
+
 const infoPanel = document.querySelector("div.infoPanel");
 
 const startBtn = document.querySelector("div.infoPanel button.startBtn");
 
 if (window.location.pathname == `${settings.path}/stage1.html`) {
+  infoPanel.style.height = "100vh";
+  infoPanel.style.width = "100vw";
+  infoPanel.style.borderRadius = "0px";
+
+  setTimeout(() => {
+    infoPanel.style.transition = "1s";
+    infoPanel.style.height = "80%";
+    infoPanel.style.width = "80%";
+    infoPanel.style.borderRadius = "20px";
+  }, 1000);
+
   window.addEventListener("load", function() {
     setTimeout(function() {
       document.querySelector("div.infoPanel img.loading").style.display =
