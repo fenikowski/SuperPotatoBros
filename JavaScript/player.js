@@ -255,7 +255,7 @@ class Player extends Element {
       // about eaten cookies, hp, mp to the session storage
       case "portal":
         let path = window.location.pathname;
-        let number = parseInt(path[path.length - 6]) + 1;
+        let number = parseInt(path) ? parseInt(path) + 1 : 2;
         window.location.pathname = `${settings.path}/stage${number}.html`;
         sessionStorage.setItem(
           `eatenCookiesStage${number}`,
