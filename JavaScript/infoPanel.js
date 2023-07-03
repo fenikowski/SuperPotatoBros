@@ -4,7 +4,7 @@ const infoPanel = document.querySelector("div.infoPanel");
 
 const startBtn = document.querySelector("div.infoPanel button.startBtn");
 
-if (window.location.pathname == `${settings.path}/index.html`) {
+if (window.location.pathname == `${settings.path}/index.html` || window.location.pathname == `/`) {
   infoPanel.style.height = "100vh";
   infoPanel.style.width = "100vw";
   infoPanel.style.borderRadius = "0px";
