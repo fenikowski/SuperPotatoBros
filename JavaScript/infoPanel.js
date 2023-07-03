@@ -4,7 +4,7 @@ const infoPanel = document.querySelector("div.infoPanel");
 
 const startBtn = document.querySelector("div.infoPanel button.startBtn");
 
-if (window.location.pathname == `${settings.path}/stage1.html`) {
+if (window.location.pathname == `${settings.path}/index.html`) {
   infoPanel.style.height = "100vh";
   infoPanel.style.width = "100vw";
   infoPanel.style.borderRadius = "0px";
@@ -90,7 +90,7 @@ function deathPanel() {
   document
     .querySelector("button.againBtn")
     .addEventListener("click", function() {
-      window.location.pathname = `${settings.path}/stage1.html`;
+      window.location.pathname = `${settings.path}/index.html`;
       sessionStorage.setItem(`eatenCookiesStage1`, 0);
       sessionStorage.setItem(`hpStage1`, 100);
     });
